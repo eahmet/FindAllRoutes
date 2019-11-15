@@ -44,7 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Algoritms.cs" />
+    <Compile Include="Connections.cs" />
     <Compile Include="Node.cs" />
+    <Compile Include="ProcessStep.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
