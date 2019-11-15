@@ -10,6 +10,6 @@ namespace FindAllPaths
     {
         public int StartNode { get; set; }
         public int EndNode { get; set; }
-
+        public int FromPort { get; set; }
     }
 }

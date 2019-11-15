@@ -10,7 +10,9 @@ namespace FindAllPaths
     {
         static void Main(string[] args)
         {
-            
+            Console.WriteLine("Which method you want to execute? (S: Simulate,R: Route)");
+            var choice =Console.ReadLine();
+            if (choice.ToLower() == "r") { 
             var algoritmInstance = new Algoritms();
             var routerList = algoritmInstance.GetAllRoutes();
             double totalSum = 0;
@@ -32,6 +34,22 @@ namespace FindAllPaths
             Console.WriteLine("Average Cost:" + totalCost / routerList.Count());
             Console.WriteLine("----------");
             Console.ReadLine();
+            }
+            else if(choice.ToLower()=="s")
+            {
+                var dicisionList= new List<string>();
+                var algoritmInstance = new Algoritms();
+                for (int i = 0; i < 100; i++)
+                {
+                    algoritmInstance.Simulate();
+                    Console.WriteLine("----------");
+                    //dicisionList.Add(algoritmInstance.MakeDicision());
+                }
+
+                Console.WriteLine("Hayır:" + dicisionList.Count(x=>x.Equals("Hayır")));
+                Console.WriteLine("Evet:" + dicisionList.Count(x => x.Equals("Evet")));
+                Console.ReadLine();
+            }
         }
     }
 }
