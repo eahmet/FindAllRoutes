@@ -18,18 +18,18 @@ namespace FindAllPaths
 
             foreach (var route in routerList)
             {
-                Console.WriteLine("Geçilen Adımlar: "+String.Join(",",route.ToList().Select(x=>x.Id)));
-                Console.WriteLine("Geçilen Adım Sayısı:" + route.Count.ToString());
-                Console.WriteLine("Geçilen Adımların Toplam Süresi:" + route.ToList().Select(x => x.Time).Sum());
+                Console.WriteLine("Route: "+String.Join(",",route.ToList().Select(x=>x.Id)));
+                Console.WriteLine("Total Count of Hops:" + route.Count.ToString());
+                Console.WriteLine("Total Time of Route:" + route.ToList().Select(x => x.Time).Sum());
                 totalSum += route.ToList().Select(x => x.Time).Sum();
-                Console.WriteLine("Geçilen Adımların Toplam Maliyeti:" + route.ToList().Select(x => x.Cost).Sum());
+                Console.WriteLine("Total Cost of Hops:" + route.ToList().Select(x => x.Cost).Sum());
                 totalCost += route.ToList().Select(x => x.Cost).Sum();
                 Console.WriteLine("----------");
             }
             Console.WriteLine("----------");
-            Console.WriteLine("Toplam Akış Sayısı:" + routerList.Count());
-            Console.WriteLine("Ortalama Süre:" + totalSum / routerList.Count());
-            Console.WriteLine("Ortalama Maliyet:" + totalCost / routerList.Count());
+            Console.WriteLine("Total Route Count:" + routerList.Count());
+            Console.WriteLine("Avarage Sum:" + totalSum / routerList.Count());
+            Console.WriteLine("Average Cost:" + totalCost / routerList.Count());
             Console.WriteLine("----------");
             Console.ReadLine();
         }
